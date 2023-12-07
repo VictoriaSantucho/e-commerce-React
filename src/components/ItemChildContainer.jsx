@@ -1,10 +1,10 @@
 //import '../styles/ItemChildContainer.scss'
 
-const ItemChildContainer = ({saludo}) => {
+const ItemChildContainer = ({greeting}) => {
 
   return (
     <div className='itemChildContainer'>
-        <h1>{saludo}</h1>
+        <h1>{greeting}</h1>
     </div>
   )
 }
