@@ -6,7 +6,7 @@ const NavBar = () => {
             <div className="navbar-content">
                 <div className = 'brand'>
                     <a href=''><img src='/images/logo.jpeg' width='40px'></img></a>
-                    <p>Montagne</p>
+                    <p>Mountain</p>
                 </div>
 
                 <ul className="navbar-items">
