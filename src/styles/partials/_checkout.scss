@@ -1,0 +1,39 @@
+.order-sent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 200px auto;
+    gap: 20px;
+
+    .orederId {
+        border: 1px solid black;
+        padding: 5px 10px;
+        border-radius: 3px 
+
+    }
+
+    .orderTks {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .button-goToShop {
+        width: 180px; 
+        margin: 0 60px;
+        font-size: 15px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        border-radius: 4px;
+        text-decoration: none;
+        border: 2px solid black;
+        background-color: black;
+        color: white;
+    }
+    .button-goToShop:hover {
+        background-color: white;
+        color: black;
+    }
+}

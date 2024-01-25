@@ -1,29 +1,35 @@
 import React, { useEffect, useState } from 'react'
-
 import { useParams } from 'react-router-dom'
 import ItemDetail  from './ItemDetail'
-
+import {doc, getDoc} from 'firebase/firestore'
+import db from '../../db/db'
 
 function ItemDetailContainer() {
 
     const [product, setProduct] = useState({})
+    const [isProduct, setIsProduct] = useState(false)
     const {id} = useParams()
    
 
     useEffect(()=> {
-        get
-        .then((response) => {
-                console.log(response)
-                const findProduct = response.find((prod) => prod.id == id)
-                console.log(findProduct)
-                setProduct(findProduct)
-        })
+        const productsRef = doc(db, 'products', id)
+        getDoc(productsRef)
+        .then((response => {
+            const productsDB = {id : productsRef.id, ...response.data()}
+            if(response.exists()){
+                setIsProduct(true)
+            }
+            setProduct(productsDB)
+        }))
         .catch((err) => console.log(err))
-    }, [])
+    }, [id])
   
     return (
     <div className='itemDetailContainer'>
-        <ItemDetail product={product}/>
+        {isProduct ? 
+        <ItemDetail product={product}/> 
+        : 
+        <p>The product not exist</p>}
     </div>
   )
 }

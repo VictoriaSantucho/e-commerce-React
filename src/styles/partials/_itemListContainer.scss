@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 .itemListContainer {
     display: flex;
     flex-direction: column;
@@ -8,7 +10,9 @@
     padding-bottom: 80px;
 
     & h1 {
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-family: Montserrat, sans-serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-
-} 
+}
