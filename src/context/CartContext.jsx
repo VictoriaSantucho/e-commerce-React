@@ -4,25 +4,25 @@ import { createContext, useState } from "react";
 const CartContext = createContext()
 
 // children is the component that is wrapped by CartProvider
-const CartProvider = ({children}) => {
+const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
     const addProductCart = (product) => {
         //check if product is already in cart. If so, update amount
-        if(isInCart(product.id)){
+        if (isInCart(product.id)) {
             const productInCart = cart.map(item => {
-                if(item.id === product.id) {
+                if (item.id === product.id) {
                     return {
                         ...item,
                         amount: item.amount + product.amount
                     }
-                }else {
+                } else {
                     return item
                 }
             })
             setCart(productInCart)
-        }else {
+        } else {
             setCart([...cart, product])
         }
     }
@@ -32,7 +32,7 @@ const CartProvider = ({children}) => {
         return cart.some(product => product.id === id)
     }
 
-    const  totalAmount = () => {
+    const totalAmount = () => {
         //reduce method to calculate total amount of products in cart
         return cart.reduce((acc, product) => acc + product.amount, 0)
     }
@@ -43,23 +43,20 @@ const CartProvider = ({children}) => {
 
     const cleanCart = () => {
         setCart([])
-    
+
     }
 
     const totalPrice = () => {
         return cart.reduce((acc, product) => acc + product.price * product.amount, 0)
     }
 
-    const totalItems = () => {
-        return cart.reduce((acc, product) => acc + product.amount, 0)
-    }
 
     return (
-        <CartContext.Provider value={{cart, addProductCart, totalAmount, deleteProductCart, cleanCart, totalPrice, totalItems}}>
+        <CartContext.Provider value={{ cart, addProductCart, totalAmount, deleteProductCart, cleanCart, totalPrice }}>
             {children}
         </CartContext.Provider>
     )
-    
+
 }
 
-export {CartContext, CartProvider}
+export { CartContext, CartProvider }

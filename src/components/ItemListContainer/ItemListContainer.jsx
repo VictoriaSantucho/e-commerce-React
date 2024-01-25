@@ -17,12 +17,12 @@ const ItemListContainer = ({ greeting }) => {
 
     if (category) {
       consulta = query(productsRef, where('category', '==', category))
-  
+
     } else {
       consulta = productsRef
     }
 
-    getDocs(consulta) 
+    getDocs(consulta)
       .then((response) => {
         let productdb = response.docs.map((doc) => {
           return { id: doc.id, ...doc.data() }
@@ -42,7 +42,7 @@ const ItemListContainer = ({ greeting }) => {
       ) : (
         <div className='itemListContainer'>
           <h1>{greeting}</h1>
-          <ItemList products={products}/>
+          <ItemList products={products} />
         </div>
       )}
     </>

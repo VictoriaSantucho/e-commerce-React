@@ -222,6 +222,11 @@ body {
   margin: 100px auto;
   width: 700px;
 }
+.itemDetailContainer p {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
 
 .itemDetail {
   display: flex;

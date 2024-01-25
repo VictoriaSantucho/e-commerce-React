@@ -13,16 +13,16 @@ const NavBar = () => {
     }, [])
 
     const stickNavbar = () => {
-        if(window != undefined) {
+        if (window != undefined) {
             let heightWindow = window.scrollY;
             heightWindow > 130 ? setStickyClass('sticky-nav') : setStickyClass('')
         }
     }
 
     return (
-        <div className = {`navbar-${stickyClass}`}>
-            <div className= {`navbar-content-${stickyClass}`}>
-                <div className = 'brand'>
+        <div className={`navbar-${stickyClass}`}>
+            <div className={`navbar-content-${stickyClass}`}>
+                <div className='brand'>
                     <Link to='./'>
                         <img src='/images/logo.jpeg' width='40px'></img>
                     </Link>
@@ -34,7 +34,7 @@ const NavBar = () => {
                     <Link to='/categories/laptops'>Laptops</Link>
                     <Link to='/'>Home</Link>
                 </ul>
-                <CartWidget/>
+                <CartWidget />
             </div>
         </div>
     )

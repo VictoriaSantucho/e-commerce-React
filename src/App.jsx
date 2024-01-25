@@ -13,23 +13,23 @@ import './styles/styles.css'
 
 function App() {
 
-  return (
-     <BrowserRouter>
-     <CartProvider>
-      <NavBar/>
-        <Routes>
-            <Route path='/' forceRefresh={true} element={<ItemListContainer greeting={'Welcome to Mountain'}/>}/>
-            <Route path='/categories/:category' element={<ItemListContainer greeting={'Welcome to Mountain'}/>}/>
-            <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
-            <Route path='/cart' element={<Cart/>}/>
-            <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='*' element={<Navigate to='/'/>}/>
-            
-        </Routes>
-        </CartProvider>
-      </BrowserRouter>
-    
-  )
+    return (
+        <BrowserRouter>
+            <CartProvider>
+                <NavBar />
+                <Routes>
+                    <Route path='/' forceRefresh={true} element={<ItemListContainer greeting={'Welcome to Mountain'} />} />
+                    <Route path='/categories/:category' element={<ItemListContainer greeting={'Welcome to Mountain'} />} />
+                    <Route path='/detail/:id' element={<ItemDetailContainer />} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/checkout' element={<Checkout />} />
+                    <Route path='*' element={<Navigate to='/' />} />
+
+                </Routes>
+            </CartProvider>
+        </BrowserRouter>
+
+    )
 }
 
 export default App
