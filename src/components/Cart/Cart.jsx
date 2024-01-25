@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
-import { CartContext } from '../../context/CartContext'
-import { useContext } from 'react'
-import { FaTrashAlt } from 'react-icons/fa'
+import {Link} from 'react-router-dom'
+import {useContext} from 'react'
+import {FaTrashAlt} from 'react-icons/fa'
+import {CartContext} from '../../context/CartContext'
+
 
 function Cart() {
     const { cart, cleanCart, deleteProductCart, totalPrice, totalAmount } = useContext(CartContext);

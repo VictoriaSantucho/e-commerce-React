@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import {createContext, useState} from "react";
 
 // Create context to share cart data between components
 const CartContext = createContext()

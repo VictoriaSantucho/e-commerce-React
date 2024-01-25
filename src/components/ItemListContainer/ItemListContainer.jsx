@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import {useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom'
+import {collection, where, query, getDocs} from 'firebase/firestore'
+import db from '../../db/db'
 import ItemList from './ItemList'
 import useLoading from '../../hooks/useLoading'
-import { collection, where, query, getDocs } from 'firebase/firestore'
-import db from '../../db/db'
+
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])

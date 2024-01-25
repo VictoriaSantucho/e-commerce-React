@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { useState } from 'react';
-import { Form } from './Form';
-import { CartContext } from '../../context/CartContext';
-import { collection, addDoc } from 'firebase/firestore';
+import React, {useContext} from 'react';
+import {useState} from 'react';
+import {Link} from 'react-router-dom';
+import {collection, addDoc} from 'firebase/firestore';
 import db from '../../db/db';
-import { Link } from 'react-router-dom';
+
+import {Form} from './Form';
+import {CartContext} from '../../context/CartContext';
 
 const Checkout = () => {
     const [dataForm, setDataForm] = useState({
