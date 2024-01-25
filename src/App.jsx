@@ -6,7 +6,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
-import Checkout from './components/Checkout/checkout'
+import Checkout from './components/Checkout/Checkout'
 
 import './styles/styles.css'
 
